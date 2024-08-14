@@ -1,0 +1,151 @@
+
+div.main-container {
+    width: 100%;
+    display: flex;
+    padding: 35px 0;
+    padding-bottom: 75px;
+
+    div.main-box {
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: var(--application-width);
+
+        div.container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            margin-top: 45px;
+
+            div.left-introduce {
+                padding-top: 35px;
+                display: flex;
+                margin-right: 80px;
+                flex-direction: column;
+                justify-content: center;
+
+                h2.left-title {
+                    font-size: 3rem;
+                    color: #343a40;
+                    font-weight: 600;
+                    margin-bottom: 1.5rem;
+                }
+
+                p.left-desc {
+                    line-height: 2;
+                    color: #8a90a2;
+                    overflow: hidden;
+                    font-size: 1.125rem;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    text-overflow: ellipsis;
+                    -webkit-box-orient: vertical;
+                }
+
+                div.button-group {
+                    margin-top: auto;
+                    margin-bottom: 35px;
+
+                    .button-link {
+                        cursor: pointer;
+                        color: #ffffff;
+                        padding: 10px 20px;
+                        margin-right: 25px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            img.screenhot {
+                padding: 35px 0;
+                margin-left: auto;
+                border-radius: 5px;
+                height: calc(100% - 70px);
+            }
+        }
+
+        div.screenshot-group {
+            width: 100%;
+            height: 200px;
+            margin-top: 35px;
+            display: flex;
+            overflow: hidden;
+            overflow-x: scroll;
+
+            div.screenshot-item {
+                min-width: 92px;
+                height: inherit;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    div.main-box.box-mobile {
+        height: auto;
+        display: unset;
+
+        div.container {
+            height: unset;
+            flex-direction: column;
+        
+            div.left-introduce {
+                width: 90%;
+                padding: 0;
+                margin: 40px auto;
+
+                h2.left-title {
+                    font-size: 1.875rem;
+                    text-align: center;
+                    font-weight: bold;
+                }
+
+                p.left-desc {
+                    font-size: 1rem;
+                    text-align: center;
+                }
+
+                div.button-group {
+                    width: 100%;
+                    display: flex;
+                    margin-top: 40px;
+                    margin-bottom: 0;
+                    justify-content: space-between;
+
+                    .button-link {
+                        width: 46%;
+                        margin-right: 0;
+                        display: block;
+                        padding: 15px 0;
+                        font-size: 1rem;
+                        text-align: center;
+                    }
+                }
+            }
+
+            img.screenhot {
+                width: 45%;
+                padding: unset;
+                border-radius: 5px;
+                margin: 0 auto!important;
+                height: unset!important;
+            }
+        }
+    }
+}
+
+div.main-container.container-mobile {
+    padding: 0;
+    height: unset;
+    padding-bottom: unset;
+}
+
+div.van-action-sheet__description {
+    color: #343a40;
+    font-size: 1.25rem;
+}
+
+span.van-action-sheet__name {
+    color: #8a90a2;
+}
