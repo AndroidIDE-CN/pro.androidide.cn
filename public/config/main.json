@@ -1,0 +1,36 @@
+
+{
+    "downloadHref": [{
+        "name": "下载线路一",
+        "href": "https://"
+    },{
+        "name": "下载线路二",
+        "href": "https://"
+    },{
+        "name": "下载线路三",
+        "href": "https://"
+    }],
+
+    "preview": [{
+        "title": "图片一",
+        "image": "/preview/preview_1.png"
+    },{
+        "title": "图片二",
+        "image": "/preview/preview_2.png"
+    },{
+        "title": "图片三",
+        "image": "/preview/preview_3.png"
+    },{
+        "title": "图片四",
+        "image": "/preview/preview_4.png"
+    },{
+        "title": "图片五",
+        "image": "/preview/preview_5.png"
+    },{
+        "title": "图片六",
+        "image": "/preview/preview_6.png"
+    },{
+        "title": "图片七",
+        "image": "/preview/preview_7.png"
+    }]
+}

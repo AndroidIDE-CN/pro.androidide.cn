@@ -1,0 +1,19 @@
+
+[
+    {
+        "name": "联系方式一",
+        "desc": "这是联系方式的描述",
+        "href": "https://",
+        "target": "_blank"
+    },{
+        "name": "联系方式二",
+        "desc": "这是联系方式的描述",
+        "href": "https://",
+        "target": "_blank"
+    },{
+        "name": "联系方式三",
+        "desc": "这是联系方式的描述",
+        "href": "https://",
+        "target": "_blank"
+    }
+]
