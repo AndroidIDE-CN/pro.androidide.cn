@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "axios": "^1.7.3",
+    "axios": "^1.7.4",
     "disable-devtool": "^0.3.7",
     "element-plus": "^2.8.0",
     "pace-js": "^1.2.4",
