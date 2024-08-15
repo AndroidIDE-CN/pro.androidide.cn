@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <div class="friends-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'" v-if="readyStatus">
+    <div class="friends-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'">
         <div class="friends-box">
             <h1 class="frame-title">友情链接</h1>
             <p class="frame-desc">无需因陌生而胆怯，我眼里都是灰烬~</p>
 
-            <div class="friends-data">
+            <div class="friends-data" v-if="readyStatus">
                 <a class="friends-item" v-for="(item,index) in siteConfig.data" :key="index" :href="item.href" :target="item.target">
                     <img class="friends-image" v-lazy="item.image" :alt="item.title">
                     <div class="friends-content">

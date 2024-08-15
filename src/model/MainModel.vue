@@ -52,14 +52,14 @@
 </script>
 
 <template>
-    <div class="main-container" :style="{ minHeight: applicationStore.isDeviceMobile ? 'calc(100vh - 65px)' : '600px', background: applicationStore.isDeviceMobile ? '#ffffff' : 'rgb(248 250 252)' }" :class="applicationStore.isDeviceMobile && 'container-mobile'" v-if="readyStatus">
+    <div class="main-container" :style="{ minHeight: applicationStore.isDeviceMobile ? 'calc(100vh - 65px)' : '600px', background: applicationStore.isDeviceMobile ? '#ffffff' : 'rgb(248 250 252)' }" :class="applicationStore.isDeviceMobile && 'container-mobile'">
         <div class="main-box" v-if="!applicationStore.isDeviceMobile">
             <div class="container">
                 <div class="left-introduce">
                     <h2 class="left-title">一款现代化的编辑器</h2>
                     <p class="left-desc">基于原版深度定制、适配本土化的操作习惯，一键快速添加常用的代码，大幅提高开发效率。</p>
 
-                    <div class="button-group">
+                    <div class="button-group" v-if="readyStatus">
                         <el-dropdown :style="{ lineHeight: 'unset',verticalAlign: 'unset',height: 'auto',fontSize: 'unset' }" v-if="downloadConfig.length > 1">
                             <a class="button-link" :style="{ background: '#495057', color: '#ffffff', border: '1px solid #495057' }" target="_blank" title="立即下载" :href="downloadConfig[0].href">立即下载</a>
                             <template #dropdown>
@@ -75,7 +75,7 @@
                 <img class="screenhot" v-lazy="preview" draggable="false" alt="AIDE Pro">
             </div>
 
-            <div class="screenshot-group">
+            <div class="screenshot-group" v-if="readyStatus">
                 <el-image v-for="(item,index) in previewList" :key="index" :src="item" :preview-src-list="previewList" :zoom-rate="1.2" :max-scale="7" :min-scale="0.2" :initial-index="4" fit="cover" class="screenshot-item" lazy :alt="item"/>
             </div>
         </div>
@@ -87,13 +87,13 @@
                     <h2 class="left-title">一款现代化的编辑器</h2>
                     <p class="left-desc">基于原版深度定制、适配本土化的操作习惯，一键快速添加常用的代码，大幅提高开发效率。</p>
 
-                    <div class="button-group">
+                    <div class="button-group" v-if="readyStatus">
                         <span class="button-link" :style="{ background: '#495057', color: '#ffffff', border: '1px solid #495057' }" @click="showBottom = true" v-if="downloadConfig.length > 1">立即下载</span>
                         <a class="button-link" :style="{ background: '#495057', color: '#ffffff', border: '1px solid #495057' }" target="_blank" title="立即下载" :href="downloadConfig[0].href" v-else>立即下载</a>
                         <span class="button-link" :style="{ background: '#ffffff', color: '#495057', border: '1px solid #495057' }" @click="functionStore.setIsHisVerOpen(true)">历史版本</span>
                     </div>
 
-                    <div class="screenshot-group">
+                    <div class="screenshot-group" v-if="readyStatus">
                         <el-image v-for="(item,index) in previewList" :key="index" :src="item" :preview-src-list="previewList" :zoom-rate="1.2" :max-scale="7" :min-scale="0.2" :initial-index="4" fit="cover" class="screenshot-item" lazy :alt="item"/>
                     </div>
                 </div>

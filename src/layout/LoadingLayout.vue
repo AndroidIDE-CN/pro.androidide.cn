@@ -15,8 +15,8 @@
 <style scoped>
     div.van-overlay {
         width: 100vw;
-        height: 100vh;
-        display: grid;
+        height: 100%;
+        display: flex;
         overflow: hidden;
         background: #ffffff!important;
     }

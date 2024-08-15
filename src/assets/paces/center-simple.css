@@ -5,13 +5,13 @@
 	bottom: 0;
 	height: 5px;
 	width: 135px;
-	top: calc(75%);
 	margin:  0 auto;
 	position: fixed;
 	overflow: hidden;
 	border-radius: 3px;
 	z-index: 999999999;
 	background: #ffffff;
+	top: calc(50% + 105px);
 	border: 1px solid #0c9fe5;
 }
 

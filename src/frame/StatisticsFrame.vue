@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <div class="statistics-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'" v-if="readyStatus">
+    <div class="statistics-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'">
         <div class="statistics-box">
             <h1 class="frame-title">数据统计</h1>
             <p class="frame-desc">无需因陌生而胆怯，我眼里都是灰烬~</p>
 
-            <div class="statistics-data">
+            <div class="statistics-data" v-if="readyStatus">
                 <div class="statistics-item" v-for="(item,index) in siteConfig.data" :key="index">
                     <span class="item-value">{{ item.value }}</span>
                     <span class="item-title">{{ item.title }}</span>

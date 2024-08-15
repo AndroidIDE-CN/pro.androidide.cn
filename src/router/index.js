@@ -4,9 +4,13 @@ import PageHome from '@/pages/PageHome.vue'
 import { useApplicationStore } from '@/stores/application'
 import { createRouter, createWebHistory } from 'vue-router'
 
+let status = false;
+
 const isLoadComplete = async () => {
   const applicationStore = useApplicationStore();
   Pace.on("done", async () => {
+    status = true;
+    import("@/assets/paces/remove.css")
     applicationStore.setIsLoadinfgStatus(false);
     if (applicationStore.isDeviceMobile) {
       document.getElementById("application").style.paddingTop = "65px";
@@ -33,6 +37,7 @@ createRoutes.beforeEach(async (to, from, next) => {
 	if (to === from) return;
 	const applicationStore = useApplicationStore();
 	Pace.on("start", async () => {
+    if (status) return Pace.stop();
     await applicationStore.setIsLoadinfgStatus(true);
     document.getElementById("application").style.paddingTop = "0px";
   });

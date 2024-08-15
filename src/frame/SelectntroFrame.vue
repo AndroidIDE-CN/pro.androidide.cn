@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <div class="selectntro-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'" v-if="readyStatus">
+    <div class="selectntro-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'">
         <div class="selectntro-box">
             <h1 class="frame-title">为何选择</h1>
             <p class="frame-desc">无需因陌生而胆怯，我眼里都是灰烬~</p>
 
-            <div class="selectntro-data">
+            <div class="selectntro-data" v-if="readyStatus">
                 <div class="selectntro-item" v-for="(item,index) in siteConfig.data" :key="index">
                     {{ item.title }}
                 </div>
