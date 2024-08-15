@@ -1,6 +1,6 @@
 {
 	"rewrites": [{
-		"source": "/(.*)",
+		"source": "/api/(.*)",
 		"destination": "https://api.pro.androidide.cn/$1"
 	},{
 		"source": "/",
