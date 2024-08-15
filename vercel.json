@@ -1,9 +1,3 @@
-{
-	"rewrites": [{
-		"source": "/api/(.*)",
-		"destination": "https://api.pro.androidide.cn/$1"
-	},{
-		"source": "/",
-		"destination": "/"
-	}]
-  }
+{"rewrites": [
+    { "source": "/api/(.*)", "destination": "https://api.pro.androidide.cn/api/index" }
+  ]}
