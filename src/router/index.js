@@ -25,7 +25,11 @@ const createRoutes = createRouter({
       name: 'home',
       component: PageHome,
       beforeEnter: [isLoadComplete],
-  }],
+  },{
+		path: "/:catchAll(.*)",
+		component: () => import("@/layout/NotFouLayout.vue"),
+		beforeEnter: [isLoadComplete],
+	}],
   scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) return savedPosition;
 		if (to.meta.scrollToTop) return { top: 0 };
