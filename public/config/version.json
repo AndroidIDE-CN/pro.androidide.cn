@@ -5,5 +5,15 @@
         "vercode": "20240801201",
         "versize": "10.0MB",
         "updateLog": "<p>1.更新了XXX.</p><p>2.新增了XXX.</p><p>3.修复了XXX.</p>"
+    },{
+        "version": "2.0.0.1",
+        "vercode": "20240801202",
+        "versize": "10.0MB",
+        "updateLog": "<p>1.更新了XXX.</p><p>2.新增了XXX.</p><p>3.修复了XXX.</p>"
+    },{
+        "version": "2.0.0.1",
+        "vercode": "20240801203",
+        "versize": "10.0MB",
+        "updateLog": "<p>1.更新了XXX.</p><p>2.新增了XXX.</p><p>3.修复了XXX.</p>"
     }
 ]

@@ -52,7 +52,7 @@
 </script>
 
 <template>
-    <div class="main-container" :style="{ minHeight: applicationStore.isDeviceMobile ? 'calc(100vh - 65px)' : '600px', background: applicationStore.isDeviceMobile ? '#ffffff' : 'rgb(248 250 252)' }" :class="applicationStore.isDeviceMobile && 'container-mobile'">
+    <div class="main-container" :style="{ background: applicationStore.isDeviceMobile ? '#ffffff' : 'rgb(248 250 252)' }" :class="applicationStore.isDeviceMobile && 'container-mobile'">
         <div class="main-box" v-if="!applicationStore.isDeviceMobile">
             <div class="container">
                 <div class="left-introduce">

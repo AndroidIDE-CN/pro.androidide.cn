@@ -20,16 +20,31 @@ const isLoadComplete = async () => {
 
 const createRoutes = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [{
+  routes: [
+    
+    {
       path: '/',
       name: 'home',
       component: PageHome,
       beforeEnter: [isLoadComplete],
-  },{
-		path: "/:catchAll(.*)",
-		component: () => import("@/layout/NotFouLayout.vue"),
-		beforeEnter: [isLoadComplete],
-	}],
+    },{
+       path: '/team',
+       name: 'Team',
+       component: () => import("@/pages/PageTeam.vue"),
+       beforeEnter: [isLoadComplete],
+    },{
+      path: '/version',
+      name: 'Version',
+      component: () => import("@/pages/PageVersion.vue"),
+      beforeEnter: [isLoadComplete],
+    },
+    
+    {
+      path: "/:catchAll(.*)",
+      component: () => import("@/layout/NotFouLayout.vue"),
+      beforeEnter: [isLoadComplete],
+    }
+  ],
   scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) return savedPosition;
 		if (to.meta.scrollToTop) return { top: 0 };
@@ -40,11 +55,15 @@ const createRoutes = createRouter({
 createRoutes.beforeEach(async (to, from, next) => {
 	if (to === from) return;
 	const applicationStore = useApplicationStore();
-	Pace.on("start", async () => {
-    if (status) return Pace.stop();
-    await applicationStore.setIsLoadinfgStatus(true);
-    document.getElementById("application").style.paddingTop = "0px";
-  });
+  if (to.fullPath !== '/') {
+    import("@/assets/paces/remove.css");
+  } else {
+    Pace.on("start", async () => {
+      if (status) return Pace.stop();
+      await applicationStore.setIsLoadinfgStatus(true);
+      document.getElementById("application").style.paddingTop = "0px";
+    });
+  }
 	next();
 });
 
