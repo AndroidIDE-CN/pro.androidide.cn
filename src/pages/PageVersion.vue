@@ -1,3 +1,4 @@
+<!-- eslint-disable no-undef -->
 
 <script setup>
     /**
@@ -13,8 +14,8 @@
     onMounted(async () => {
         await utils.axiostool.sendHttpGet(utils.apiConfig.version).then((data) => {
             versionList.value = data.data;
-        }).catch(async (error) => {
-            throw new Error(error);
+        }).catch(async () => {
+            ElMessage({ message: '请求接口失败', type: 'error', plain: true});
         });
     });
 
