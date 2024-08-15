@@ -1,7 +1,7 @@
 {
 	"rewrites": [{
 		"source": "/(.*)",
-		"destination": "https://api.pro.androidide.cn/api/index"
+		"destination": "https://api.pro.androidide.cn/$1"
 	},{
 		"source": "/",
 		"destination": "/"
