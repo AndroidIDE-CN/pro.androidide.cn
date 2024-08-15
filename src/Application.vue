@@ -4,7 +4,6 @@
   import { onMounted } from 'vue';
   import utils from '@/scripts/utils';
   import { RouterView } from 'vue-router';
-  import preview from "@/image/preview.jpg"
   import LoadingLayout from './layout/LoadingLayout.vue'
   import ErrorFaiLayout from './layout/ErrorFaiLayout.vue'
 
@@ -12,7 +11,6 @@
 
   onMounted(async () => {
     await applicationStore.setSiteConfig();
-    document.querySelector("link[rel = 'icon']").href = preview;
   });
 </script>
 
