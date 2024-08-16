@@ -1,0 +1,60 @@
+
+.van-grid::after {
+    content: unset;
+}
+
+.van-number-keyboard {
+    padding-bottom: 10px;
+}
+
+.van-grid-item__content {
+    padding: 0;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
+div.pay-item {
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    line-height: 65px;
+    text-align: center;
+    border-radius: 8px;
+    width: calc(100% - 30px);
+    background-color: #ffffff;
+
+    svg {
+        width: 95%;
+        margin: auto;
+        max-height: 90%;
+    }
+}
+
+input.input-container {
+    width: 100%;
+    height: 45px;
+    margin: 0 5px;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+
+    &:focus {
+        border: 2px solid #dd524d;
+    }
+}
+
+div.price-item {
+    height: 65px;
+    padding: 0 10px;
+    line-height: 65px;
+    text-align: center;
+    border-radius: 8px;
+    width: calc(100% - 30px);
+    background-color: #ffffff;
+}
+
+div.price-item.item-active {
+    color: #ffffff;
+    background-color: #dd524d;
+}
