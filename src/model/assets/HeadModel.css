@@ -6,8 +6,8 @@ div.head-container {
   position: fixed;
   overflow: hidden;
   transition: height 0.3s;
+  background-color: #ffffff;
   border-bottom: 1px solid #e3e8f7;
-  background: #fcfcfc;
 }
 div.head-container div.head-box {
   height: 75px;
