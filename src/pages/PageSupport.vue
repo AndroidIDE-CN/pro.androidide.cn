@@ -25,7 +25,7 @@
 
 <template>
     <div class="page-support page-container">
-        <header class="page-header">支持人员</header>
+        <!-- <header class="page-header">支持人员</header> -->
         <van-notice-bar text="由于部分数据丢失显示不全，请谅解。" @click="router.push('/donate')"/>
 
         <div class="contact-card" v-for="(item,index) in supPersonList" :key="index">

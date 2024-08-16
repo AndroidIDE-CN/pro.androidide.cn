@@ -28,7 +28,7 @@
 
 <template>
     <div class="page-donate page-container">
-        <header class="page-header">捐助我们</header>
+        <!-- <header class="page-header">捐助我们</header> -->
 
         <van-grid :column-num="3" style="width: 95%; margin: 0 auto;">
             <van-grid-item v-for="(item ,index) in priceList" :key="index" @click="currentPrice = item">

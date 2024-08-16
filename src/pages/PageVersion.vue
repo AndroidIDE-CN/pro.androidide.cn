@@ -24,7 +24,7 @@
 
 <template>
     <div class="page-version page-container">
-        <header class="page-header">版本列表</header>
+        <!-- <header class="page-header">版本列表</header> -->
 
         <van-collapse v-model="activeCollapse">
             <van-collapse-item v-for="(item,index) in versionList" :key="index" :title="`${item.version}（${item.vercode}）`" :name="item.vercode">

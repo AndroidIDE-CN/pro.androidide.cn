@@ -23,7 +23,7 @@
 
 <template>
     <div class="page-member page-container">
-        <header class="page-header">团队成员</header>
+        <!-- <header class="page-header">团队成员</header> -->
 
         <div class="contact-card" v-for="(item,index) in teanPersonList" :key="index">
             <img class="avatar" v-lazy="`https://q2.qlogo.cn/g?b=qq&s=640&nk=${item.qq}`" :alt="item.nick">
