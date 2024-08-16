@@ -35,8 +35,8 @@ const createRoutes = createRouter({
     component: () => import("@/pages/PageDonate.vue"),
     beforeEnter: [isLoadComplete],
   },{
-    path: '/support',
-    name: 'Support',
+    path: '/sponsor',
+    name: 'Sponsor',
     component: () => import("@/pages/PageSupport.vue"),
     beforeEnter: [isLoadComplete],
   },{
