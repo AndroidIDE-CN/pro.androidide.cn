@@ -24,6 +24,4 @@ export default {
     download: 'https://api.pro.androidide.cn/download',
     selectntro: 'https://api.pro.androidide.cn/selectntro',
     statistics: 'https://api.pro.androidide.cn/statistics',
-
-    team: '/config/team.json'
 };

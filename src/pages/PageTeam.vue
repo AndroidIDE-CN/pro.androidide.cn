@@ -11,7 +11,7 @@
     const teanPersonList = ref([]);
 
     onMounted(async () => {
-        await utils.axiostool.sendHttpGet(utils.apiConfig.team).then((data) => {
+        await utils.axiostool.sendHttpGet(utils.apiConfig.thanks).then((data) => {
             teanPersonList.value = data.data;
         }).catch(async () => {
             ElMessage({ message: '请求接口失败', type: 'error', plain: true});
@@ -26,9 +26,9 @@
         <header class="page-header">团队成员</header>
 
         <div class="contact-card" v-for="(item,index) in teanPersonList" :key="index">
-            <img class="avatar" v-lazy="`https://q2.qlogo.cn/g?b=qq&s=640&nk=${item.qq}`" :alt="item.name">
+            <img class="avatar" v-lazy="`https://q2.qlogo.cn/g?b=qq&s=640&nk=${item.qq}`" :alt="item.nick">
             <div class="user-content">
-                <span class="username">{{ item.name }}</span>
+                <span class="username">{{ item.nick }}</span>
                 <p class="userdesc">{{ item.desc }}</p>
             </div>
         </div>

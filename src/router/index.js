@@ -71,4 +71,4 @@ createRoutes.beforeEach(async (to, from, next) => {
 	next();
 });
 
-export default createRoutes
+export default createRoutes;

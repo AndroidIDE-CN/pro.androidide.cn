@@ -2,6 +2,7 @@
 
 import './assets/style.css'
 import "@/scripts/ready.js"
+import { Icon } from 'vant'
 import { Lazyload } from 'vant'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -22,6 +23,7 @@ const toastOptions = {
 
 (async () => {
     application.use(createPinia());
+    application.use(Icon);
     application.use(router);
     application.use(Toast, toastOptions),
     application.use(Lazyload, {lazyComponent: true});
