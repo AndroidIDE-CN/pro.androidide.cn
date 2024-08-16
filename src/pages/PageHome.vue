@@ -1,7 +1,7 @@
 <!-- eslint-disable no-undef -->
 
 <script setup>
-    import { reactive, ref } from 'vue'
+    import { reactive, ref } from 'vue';
     import utils from '@/scripts/utils';
     import HeadModel from '@/model/HeadModel.vue';
     import MainModel from '@/model/MainModel.vue';
@@ -43,8 +43,8 @@
             await utils.axiostool.sendHttpGet(utils.apiConfig.version).then((data) => {
                 requestStatus.isHisVerOpen = true;
                 requestDatas.isHisVerOpen = data.data;
-            }).catch(async (error) => {
-                throw new Error(error);
+            }).catch(async () => {
+                ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });
         }
     }
@@ -55,8 +55,8 @@
             await utils.axiostool.sendHttpGet(utils.apiConfig.contack).then((data) => {
                 requestStatus.isContacOpen = true;
                 requestDatas.isContacOpen = data.data;
-            }).catch(async (error) => {
-                throw new Error(error);
+            }).catch(async () => {
+                ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });
         }
     }
@@ -67,8 +67,8 @@
             await utils.axiostool.sendHttpGet(utils.apiConfig.thanks).then((data) => {
                 requestStatus.isThanksOpen = true;
                 requestDatas.isThanksOpen = data.data;
-            }).catch(async (error) => {
-                throw new Error(error);
+            }).catch(async () => {
+                ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });
         }
     }
@@ -79,8 +79,8 @@
             await utils.axiostool.sendHttpGet(utils.apiConfig.support).then((data) => {
                 requestStatus.isSupporOpen = true;
                 requestDatas.isSupporOpen = data.data.data.list;
-            }).catch(async (error) => {
-                throw new Error(error);
+            }).catch(async () => {
+                ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });
         }
     }
