@@ -27,12 +27,14 @@
         isThanksOpen: null,
         isContacOpen: null,
         isHisVerOpen: null,
+        isSupporOpen: null,
     });
 
     const requestStatus = reactive({
         isThanksOpen: false,
         isContacOpen: false,
         isHisVerOpen: false,
+        isSupporOpen: false,
     });
 
     const isHisVerOpen = async () => {
@@ -65,6 +67,18 @@
             await utils.axiostool.sendHttpGet(utils.apiConfig.thanks).then((data) => {
                 requestStatus.isThanksOpen = true;
                 requestDatas.isThanksOpen = data.data;
+            }).catch(async (error) => {
+                throw new Error(error);
+            });
+        }
+    }
+
+    const isSupporOpen = async () => {
+        functionStore.setIsMobileHeadMore(false);
+        if (!requestStatus.isSupporOpen) {
+            await utils.axiostool.sendHttpGet(utils.apiConfig.support).then((data) => {
+                requestStatus.isSupporOpen = true;
+                requestDatas.isSupporOpen = data.data.data.list;
             }).catch(async (error) => {
                 throw new Error(error);
             });
@@ -124,6 +138,18 @@
     <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isContacOpen" title="联系我们" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isContacOpen">
         <div class="contack-us" v-loading="!requestStatus.isContacOpen" :style="{ height: requestStatus.isContacOpen ? 'auto' : '200px' }">
             <van-cell  v-for="(item,index) in requestDatas.isContacOpen" :key="index" :title="item.name" :label="item.desc" class="contack-item" @click="letGoContack(item.href)"/>
+        </div>
+    </el-dialog>
+
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isSupporOpen" title="支持人员" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isSupporOpen">
+        <div class="special-thanks" v-loading="!requestStatus.isSupporOpen" :style="{ height: requestStatus.isSupporOpen ? 'auto' : '200px' }">
+            <div class="special-thanks-item" v-for="(item,index) in requestDatas.isSupporOpen" :key="index">
+                <img class="user-avatar" v-lazy="item.img" :alt="item.name">
+                <div class="user-content">
+                    <h3 class="user-nick">{{ item.name }}</h3>
+                    <p class="user-desc">{{ item.sum }}</p>
+                </div>
+            </div>
         </div>
     </el-dialog>
 </template>
