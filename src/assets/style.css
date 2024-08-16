@@ -74,6 +74,7 @@ div.page-container header.page-header {
 }
 
 div#application:has(div.page-container) {
+    min-height: 100%;
     padding-top: 0!important;
     background-color: #f7f8fa;
 }
