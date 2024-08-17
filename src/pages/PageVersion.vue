@@ -19,7 +19,7 @@
         });
     });
 
-    document.title = "版本列表 - AIDE Pro";
+    document.title = "版本列表";
 </script>
 
 <template>

@@ -20,7 +20,7 @@
         });
     });
 
-    document.title = "支持成员 - AIDE Pro";
+    document.title = "支持成员";
 </script>
 
 <template>

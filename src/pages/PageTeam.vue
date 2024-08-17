@@ -18,7 +18,7 @@
         });
     });
 
-    document.title = "团队成员 - AIDE Pro";
+    document.title = "团队成员";
 </script>
 
 <template>

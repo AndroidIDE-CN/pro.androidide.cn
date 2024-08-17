@@ -23,7 +23,7 @@
     };
     const onLeyboardDelete = async () => otherPriceOnly.value = otherPriceOnly.value.slice(0, -1);
 
-    document.title = "捐赠我们 - AIDE Pro";
+    document.title = "捐赠我们";
 </script>
 
 <template>
