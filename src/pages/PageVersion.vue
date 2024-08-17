@@ -13,7 +13,7 @@
 
     onMounted(async () => {
         await utils.axiostool.sendHttpGet(utils.apiConfig.version).then((data) => {
-            versionList.value = data.data;
+            versionList.value = data;
         }).catch(async () => {
             ElMessage({ message: '请求接口失败', type: 'error', plain: true});
         });

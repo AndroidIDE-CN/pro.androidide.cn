@@ -12,8 +12,8 @@
 
     onMounted(async () => {
         await utils.axiostool.sendHttpGet(utils.apiConfig.head).then((data) => {
+            siteConfig.value = data;
             readyStatus.value = true;
-            siteConfig.value = data.data;
         }).catch(async (error) => {
             throw new Error(error);
         });
@@ -21,14 +21,14 @@
 </script>
 
 <template>
-    <div class="head-container" :style="{ height: functionStore.isMobileHeadMore ? `${75 + 45 * (siteConfig.linkList.length + 2)}px` : applicationStore.isDeviceMobile ? '65px' : '75px' }">
+    <div class="head-container" :style="{ height: functionStore.isMobileHeadMore ? `${75 + 45 * (siteConfig.length + 2)}px` : applicationStore.isDeviceMobile ? '65px' : '75px' }">
         <div class="head-box" :style="{ width: applicationStore.isDeviceMobile ? '90%' : 'var(--application-width)', height: applicationStore.isDeviceMobile ? '65px' : '75px' }">
             <span class="nav-title" :style="{ lineHeight: applicationStore.isDeviceMobile ? '65px' : '75px' }">AIDE Pro</span>
 
             <div class="link-box" v-if="!applicationStore.isDeviceMobile && readyStatus">
                 <span class="link-text" @click="functionStore.setIsUpdateOpen(true)">更新日志</span>
                 <span class="link-text" @click="functionStore.setIsHisVerOpen(true)">历史版本</span>
-                <span v-for="(item,index) in siteConfig.linkList" :key="index">
+                <span v-for="(item,index) in siteConfig" :key="index">
                     <a class="link-text"  :href="item.href" :title="item.title" :target="item.target" v-if="!item.toast">{{ item.title }}</a>
                     <a class="link-text" :title="item.title" v-if="item.toast" @click="toast.success(item.toastText);" style="cursor: pointer">{{ item.title }}</a>
                 </span>
@@ -39,14 +39,14 @@
             </button>
         </div>
 
-        <div class="head-more" :style="{ height: functionStore.isMobileHeadMore ? `${45 * (siteConfig.linkList.length + 2)}px` : '0px', paddingBottom: functionStore.isMobileHeadMore ? '10px' : '0px' }" v-if="readyStatus">
+        <div class="head-more" :style="{ height: functionStore.isMobileHeadMore ? `${45 * (siteConfig.length + 2)}px` : '0px', paddingBottom: functionStore.isMobileHeadMore ? '10px' : '0px' }" v-if="readyStatus">
             <div class="link-item">
                 <span class="link-text" @click="functionStore.setIsUpdateOpen(true)">更新日志</span>
             </div>
             <div class="link-item">
                 <span class="link-text" @click="functionStore.setIsHisVerOpen(true)">历史版本</span>
             </div>
-            <div class="link-item" v-for="(item,index) in siteConfig.linkList" :key="index">
+            <div class="link-item" v-for="(item,index) in siteConfig" :key="index">
                 <a class="link-text" :href="item.href" :title="item.title" :target="item.target" v-if="!item.toast">{{ item.title }}</a>
                 <a class="link-text" :title="item.title" v-if="item.toast" @click="toast.success(item.toastText);">{{ item.title }}</a>
             </div>

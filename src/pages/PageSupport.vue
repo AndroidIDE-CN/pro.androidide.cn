@@ -14,13 +14,13 @@
 
     onMounted(async () => {
         await utils.axiostool.sendHttpGet(utils.apiConfig.support).then((data) => {
-            supPersonList.value = data.data.data.list;
+            supPersonList.value = data.list;
         }).catch(async () => {
             ElMessage({ message: '请求接口失败', type: 'error', plain: true});
         });
     });
 
-    document.title = "支持成员";
+    document.title = "支持人员";
 </script>
 
 <template>

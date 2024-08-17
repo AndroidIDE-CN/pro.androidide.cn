@@ -41,8 +41,8 @@
         functionStore.setIsMobileHeadMore(false);
         if (!requestStatus.isHisVerOpen) {
             await utils.axiostool.sendHttpGet(utils.apiConfig.version).then((data) => {
+                requestDatas.isHisVerOpen = data;
                 requestStatus.isHisVerOpen = true;
-                requestDatas.isHisVerOpen = data.data;
             }).catch(async () => {
                 ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });
@@ -53,8 +53,8 @@
         functionStore.setIsMobileHeadMore(false);
         if (!requestStatus.isContacOpen) {
             await utils.axiostool.sendHttpGet(utils.apiConfig.contack).then((data) => {
+                requestDatas.isContacOpen = data;
                 requestStatus.isContacOpen = true;
-                requestDatas.isContacOpen = data.data;
             }).catch(async () => {
                 ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });
@@ -65,8 +65,8 @@
         functionStore.setIsMobileHeadMore(false);
         if (!requestStatus.isThanksOpen) {
             await utils.axiostool.sendHttpGet(utils.apiConfig.thanks).then((data) => {
+                requestDatas.isThanksOpen = data;
                 requestStatus.isThanksOpen = true;
-                requestDatas.isThanksOpen = data.data;
             }).catch(async () => {
                 ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });
@@ -78,7 +78,7 @@
         if (!requestStatus.isSupporOpen) {
             await utils.axiostool.sendHttpGet(utils.apiConfig.support).then((data) => {
                 requestStatus.isSupporOpen = true;
-                requestDatas.isSupporOpen = data.data.data.list;
+                requestDatas.isSupporOpen = data.list;
             }).catch(async () => {
                 ElMessage({ message: '请求接口失败', type: 'error', plain: true});
             });

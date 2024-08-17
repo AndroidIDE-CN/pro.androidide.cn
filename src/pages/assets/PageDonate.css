@@ -36,6 +36,17 @@ input.input-container {
 input.input-container:focus {
   border: 2px solid #dd524d;
 }
+button.donate-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  margin: 0 5px;
+  outline: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: #dd524d;
+}
 div.price-item {
   height: 65px;
   padding: 0 10px;

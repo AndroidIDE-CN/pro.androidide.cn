@@ -36,12 +36,7 @@ export const useApplicationStore = defineStore('application', () => {
         isLoadingStatus.value = false;
         siteErrorDetail.value = response.data;
         ElMessage({ message: '配置文件解析失败', type: 'error', plain: true});
-      } else if (response.data.code !== 200) {
-        isSiteErrStatus.value = true;
-        siteErrorDetail.value = error;
-        ElMessage({ message: '获取配置文件失败', type: 'error', plain: true});
       }
-
     } catch(error) {
       isSiteErrStatus.value = true;
       siteErrorDetail.value = error;

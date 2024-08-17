@@ -20,7 +20,7 @@ export default {
     contack: 'https://api.pro.androidide.cn/contack',
     friends: 'https://api.pro.androidide.cn/friends',
     preview: 'https://api.pro.androidide.cn/preview',
-    support: 'https://api.pro.androidide.cn/afdianrylb',
+    support: 'https://api.pro.androidide.cn/afdian/list',
     download: 'https://api.pro.androidide.cn/download',
     selectntro: 'https://api.pro.androidide.cn/selectntro',
     statistics: 'https://api.pro.androidide.cn/statistics',

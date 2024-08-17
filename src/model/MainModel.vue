@@ -30,13 +30,13 @@
 
     onMounted(async () => {
         await utils.axiostool.sendHttpGet(utils.apiConfig.download).then(async (data) => {
-            downloadConfig.value = data.data;
+            downloadConfig.value = data;
 
             await utils.axiostool.sendHttpGet(utils.apiConfig.preview).then((data) => {
                 readyStatus.value = true;
 
                 try {
-                    data.data.forEach(element => {
+                    data.forEach(element => {
                         previewList.push(element.image);
                     });
                 } catch(error) {

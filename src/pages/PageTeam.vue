@@ -12,7 +12,7 @@
 
     onMounted(async () => {
         await utils.axiostool.sendHttpGet(utils.apiConfig.thanks).then((data) => {
-            teanPersonList.value = data.data;
+            teanPersonList.value = data;
         }).catch(async () => {
             ElMessage({ message: '请求接口失败', type: 'error', plain: true});
         });

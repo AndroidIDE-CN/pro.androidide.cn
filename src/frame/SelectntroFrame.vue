@@ -9,8 +9,8 @@
 
     onMounted(async () => {
         await utils.axiostool.sendHttpGet(utils.apiConfig.selectntro).then((data) => {
+            siteConfig.value = data;
             readyStatus.value = true;
-            siteConfig.value = data.data;
         }).catch(async (error) => {
             throw new Error(error);
         });
@@ -24,7 +24,7 @@
             <p class="frame-desc">无需因陌生而胆怯，我眼里都是灰烬~</p>
 
             <div class="selectntro-data" v-if="readyStatus">
-                <div class="selectntro-item" v-for="(item,index) in siteConfig.data" :key="index">
+                <div class="selectntro-item" v-for="(item,index) in siteConfig" :key="index">
                     {{ item.title }}
                 </div>
             </div>
