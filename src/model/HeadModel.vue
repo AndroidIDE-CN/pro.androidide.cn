@@ -21,7 +21,7 @@
 </script>
 
 <template>
-    <div class="head-container" :style="{ height: functionStore.isMobileHeadMore ? `${75 + 45 * (siteConfig.length + 2)}px` : applicationStore.isDeviceMobile ? '65px' : '75px' }">
+    <div class="head-container" :style="{ height: functionStore.isMobileHeadMore ? `${75 + 45 * (siteConfig.length + 3)}px` : applicationStore.isDeviceMobile ? '65px' : '75px' }">
         <div class="head-box" :style="{ width: applicationStore.isDeviceMobile ? '90%' : 'var(--application-width)', height: applicationStore.isDeviceMobile ? '65px' : '75px' }">
             <span class="nav-title" :style="{ lineHeight: applicationStore.isDeviceMobile ? '65px' : '75px' }">AIDE Pro</span>
 
@@ -40,7 +40,7 @@
             </button>
         </div>
 
-        <div class="head-more" :style="{ height: functionStore.isMobileHeadMore ? `${45 * (siteConfig.length + 2)}px` : '0px', paddingBottom: functionStore.isMobileHeadMore ? '10px' : '0px' }" v-if="readyStatus">
+        <div class="head-more" :style="{ height: functionStore.isMobileHeadMore ? `${45 * (siteConfig.length + 3)}px` : '0px', paddingBottom: functionStore.isMobileHeadMore ? '10px' : '0px' }" v-if="readyStatus">
             <div class="link-item">
                 <span class="link-text" @click="functionStore.setIsUpdateOpen(true)">更新日志</span>
             </div>
