@@ -90,19 +90,19 @@
 <template>
     <HeadModel/><MainModel/><StatisticsFrame/><SelectntroFrame/><FriendsFrame/><FootModel/>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isUseAgrOpen" title="使用协议" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isUseAgrOpen" title="使用协议" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="innerHtml" v-html="modelConfig.useAgrHtml"></div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isPriAgrOpen" title="隐私政策" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isPriAgrOpen" title="隐私政策" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="innerHtml" v-html="modelConfig.priAgrHtml"></div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isResAgrOpen" title="免责声明" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isResAgrOpen" title="免责声明" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="innerHtml" v-html="modelConfig.resAgrHtml"></div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isUpdeteOpen" title="更新日志" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isHisVerOpen">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isUpdeteOpen" title="更新日志" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isHisVerOpen" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="innerHtml" v-loading="!requestStatus.isHisVerOpen" :style="{ height: requestStatus.isHisVerOpen ? 'auto' : '200px' }">
             <div v-if="requestStatus.isHisVerOpen">
                 <h3 style="margin: 0;">版本信息</h3>
@@ -114,7 +114,7 @@
         </div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isHisVerOpen" title="历史版本" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isHisVerOpen">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isHisVerOpen" title="历史版本" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isHisVerOpen" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="innerHtml" v-loading="!requestStatus.isHisVerOpen" :style="{ height: requestStatus.isHisVerOpen ? 'auto' : '200px' }">
             <el-collapse v-model="historyModel">
                 <el-collapse-item v-for="(item,index) in requestDatas.isHisVerOpen" :key="index" :title="`${item.version}（${item.vercode}）`" :name="item.vercode">
@@ -124,7 +124,7 @@
         </div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isThanksOpen" title="特别鸣谢" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isThanksOpen">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isThanksOpen" title="特别鸣谢" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isThanksOpen" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="special-thanks" v-loading="!requestStatus.isThanksOpen" :style="{ height: requestStatus.isThanksOpen ? 'auto' : '200px' }">
             <div class="special-thanks-item" v-for="(item,index) in requestDatas.isThanksOpen" :key="index">
                 <img class="user-avatar" v-lazy="`https://q2.qlogo.cn/g?b=qq&s=640&nk=${item.qq}`" :alt="item.nick">
@@ -136,13 +136,13 @@
         </div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isContacOpen" title="联系我们" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isContacOpen">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isContacOpen" title="联系我们" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isContacOpen" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="contack-us" v-loading="!requestStatus.isContacOpen" :style="{ height: requestStatus.isContacOpen ? 'auto' : '200px' }">
             <van-cell  v-for="(item,index) in requestDatas.isContacOpen" :key="index" :title="item.name" :label="item.desc" class="contack-item" @click="letGoContack(item.href)"/>
         </div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isSupporOpen" title="支持人员" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isSupporOpen">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isSupporOpen" title="支持人员" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isSupporOpen" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="special-thanks" v-loading="!requestStatus.isSupporOpen" :style="{ height: requestStatus.isSupporOpen ? 'auto' : '200px' }">
             <div class="special-thanks-item" v-for="(item,index) in requestDatas.isSupporOpen" :key="index">
                 <img class="user-avatar" v-lazy="item.img" :alt="item.name">
