@@ -22,7 +22,7 @@ onresize = async () => {
 }
 
 export const useApplicationStore = defineStore('application', () => {
-  const isLoadingStatus = ref(false);
+  const isLoadingStatus = ref(true);
   const isSiteErrStatus = ref(false);
   const siteErrorDetail = ref(null);
   const isDeviceMobile = ref(isMobile());

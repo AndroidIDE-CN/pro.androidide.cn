@@ -6,6 +6,7 @@ import { fileURLToPath, URL } from 'node:url'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from '@vant/auto-import-resolver'
+import { VueHooksPlusResolver } from '@vue-hooks-plus/resolvers'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 const base64SetPlugin = async (limit = 4096) => {
@@ -24,5 +25,5 @@ export default defineConfig({
   css: {modules: {generateScopedName: '[name]-[hash:base64:5]'}},
   entry: '/src/application.js',output: {manualChunks(id) {if (id.includes('node_modules')) {return 'vendor';}}},resolve: {alias: {'@': fileURLToPath(new URL('./src', import.meta.url))}},
   server: {host: '0.0.0.0',hot: {reload: true,rerender: true},routes: {beforeEnter(req, res, next) {if (/\.js$/.test(req.path)) res.redirect('/');else next();if (/\.md$/.test(req.path)) res.redirect('/');else next();}}},
-  plugins: [vue(),base64SetPlugin(),AutoImport({resolvers: [ElementPlusResolver(),VantResolver()]}),Components({resolvers: [ElementPlusResolver(),VantResolver()]}),],
+  plugins: [vue(),base64SetPlugin(),AutoImport({resolvers: [ElementPlusResolver(),VantResolver(),VueHooksPlusResolver()]}),Components({resolvers: [ElementPlusResolver(),VantResolver()]}),],
 })
