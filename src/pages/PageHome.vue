@@ -154,7 +154,7 @@
         </div>
     </el-dialog>
 
-    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isSponsoOpen" title="捐助我们" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isSupporOpen">
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isSponsoOpen" title="捐助我们" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isSupporOpen" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="donate-content">
             <PageDonate/>
         </div>
