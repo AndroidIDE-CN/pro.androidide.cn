@@ -1,8 +1,8 @@
 
 <script setup>
-    import { onMounted, ref } from 'vue';
-    import utils from '@/scripts/utils';
-    import { useToast } from 'vue-toastification';
+    import { onMounted, ref } from 'vue'
+    import utils from '@/scripts/utils'
+    import { useToast } from 'vue-toastification'
 
     const toast = useToast();
     const siteConfig = ref(null);
@@ -28,6 +28,7 @@
             <div class="link-box" v-if="!applicationStore.isDeviceMobile && readyStatus">
                 <span class="link-text" @click="functionStore.setIsUpdateOpen(true)">更新日志</span>
                 <span class="link-text" @click="functionStore.setIsHisVerOpen(true)">历史版本</span>
+                <span class="link-text" @click="functionStore.setIsSponsoOpen(true)">捐助我们</span>
                 <span v-for="(item,index) in siteConfig" :key="index">
                     <a class="link-text"  :href="item.href" :title="item.title" :target="item.target" v-if="!item.toast">{{ item.title }}</a>
                     <a class="link-text" :title="item.title" v-if="item.toast" @click="toast.success(item.toastText);" style="cursor: pointer">{{ item.title }}</a>
@@ -46,9 +47,11 @@
             <div class="link-item">
                 <span class="link-text" @click="functionStore.setIsHisVerOpen(true)">历史版本</span>
             </div>
+            <div class="link-item">
+                <a class="link-text" href="/donate" title="捐助我们" target="_blank">捐助我们</a>
+            </div>
             <div class="link-item" v-for="(item,index) in siteConfig" :key="index">
-                <a class="link-text" :href="item.href" :title="item.title" :target="item.target" v-if="!item.toast">{{ item.title }}</a>
-                <a class="link-text" :title="item.title" v-if="item.toast" @click="toast.success(item.toastText);">{{ item.title }}</a>
+                <a class="link-text" :href="item.href" :title="item.title" :target="item.target">{{ item.title }}</a>
             </div>
         </div>
     </div>

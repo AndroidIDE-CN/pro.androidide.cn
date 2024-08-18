@@ -6,6 +6,7 @@
     import HeadModel from '@/model/HeadModel.vue';
     import MainModel from '@/model/MainModel.vue';
     import FootModel from '@/model/FootModel.vue';
+    import PageDonate from '@/pages/PageDonate.vue';
     import FriendsFrame from '@/frame/FriendsFrame.vue';
     import SelectntroFrame from '@/frame/SelectntroFrame.vue';
     import StatisticsFrame from '@/frame/StatisticsFrame.vue';
@@ -150,6 +151,12 @@
                     <p class="user-desc">{{ item.sum }}</p>
                 </div>
             </div>
+        </div>
+    </el-dialog>
+
+    <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isSponsoOpen" title="捐助我们" :width="applicationStore.isDeviceMobile ? '90%' : '520px'" @open="isSupporOpen">
+        <div class="donate-content">
+            <PageDonate/>
         </div>
     </el-dialog>
 </template>

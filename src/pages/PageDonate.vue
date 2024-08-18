@@ -4,11 +4,13 @@
      * 捐献赞助页面
      */
 
-    import { ref, watch } from 'vue';
+    import { ref, watch } from 'vue'
+    import utils from '@/scripts/utils'
 
     const currentPrice = ref('0');
     const keyboardStatus = ref(false);
     const otherPriceOnly = ref('其他金额');
+    const applicationStore = utils.useApplicationStore();
     const priceList = ref(['5.01','6.66','8.88','23.30','99.9']);
 
     watch(currentPrice,() => {
@@ -27,7 +29,7 @@
 </script>
 
 <template>
-    <div class="page-donate page-container">
+    <div :class="`page-donate ${applicationStore.isDeviceMobile && 'page-container'}`">
         <!-- <header class="page-header">捐助我们</header> -->
 
         <van-grid :column-num="3" style="width: 95%; margin: 0 auto;">
@@ -36,8 +38,12 @@
             </van-grid-item>
 
             <van-grid-item @click="currentPrice = 'other'">
-                <div class="price-item" :class="currentPrice === 'other' && 'item-active'">
+                <div class="price-item" :class="currentPrice === 'other' && 'item-active'" v-if="applicationStore.isDeviceMobile">
                     <span>{{ otherPriceOnly === '' ? '￥0元' : otherPriceOnly === '其他金额' ? otherPriceOnly : "￥" + otherPriceOnly + "元" }}</span>
+                </div>
+
+                <div class="price-item" :class="currentPrice === 'other' && 'item-active'" v-if="!applicationStore.isDeviceMobile">
+                    <input class="price-input" type="text" v-model="otherPriceOnly"/>
                 </div>
             </van-grid-item>
         </van-grid>
@@ -70,7 +76,7 @@
             <button class="donate-button">立即捐助</button>
         </van-grid>
 
-        <van-number-keyboard :show="keyboardStatus" theme="custom" :extra-key="['00', '.']" close-button-text="完成" @blur="keyboardStatus = false" @input="onKeyboardInput" @delete="onLeyboardDelete"/>
+        <van-number-keyboard v-if="applicationStore.isDeviceMobile" :show="keyboardStatus" theme="custom" :extra-key="['00', '.']" close-button-text="完成" @blur="keyboardStatus = false" @input="onKeyboardInput" @delete="onLeyboardDelete"/>
     </div>
 </template>
 

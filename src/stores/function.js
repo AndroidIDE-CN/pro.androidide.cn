@@ -11,6 +11,7 @@ export const useFunctionStore = defineStore('function', () => {
   const isThanksOpen = ref(false); // 特别鸣谢
   const isContacOpen = ref(false); // 联系我们
   const isSupporOpen = ref(false); // 支持人员
+  const isSponsoOpen = ref(false); // 捐助我们
 
   const isMobileHeadMore = ref(false);
 
@@ -22,8 +23,9 @@ export const useFunctionStore = defineStore('function', () => {
   const setIsThanksOpen = (value) => isThanksOpen.value = value;
   const setIsContacOpen = (value) => isContacOpen.value = value;
   const setIsSupporOpen = (value) => isSupporOpen.value = value;
+  const setIsSponsoOpen = (value) => isSponsoOpen.value = value;
 
   const setIsMobileHeadMore = (value) => isMobileHeadMore.value = value;
 
-  return { isUseAgrOpen, isPriAgrOpen, isResAgrOpen, isUpdeteOpen, isHisVerOpen, isThanksOpen, isContacOpen, isSupporOpen, isMobileHeadMore, setIsUseAgrOpen, setIsPriAgrOpen, setIsResAgrOpen, setIsUpdateOpen, setIsHisVerOpen, setIsThanksOpen, setIsContacOpen, setIsMobileHeadMore, setIsSupporOpen }
+  return { isUseAgrOpen, isPriAgrOpen, isResAgrOpen, isUpdeteOpen, isHisVerOpen, isSponsoOpen, isThanksOpen, isContacOpen, isSupporOpen, isMobileHeadMore, setIsUseAgrOpen, setIsPriAgrOpen, setIsResAgrOpen, setIsUpdateOpen, setIsHisVerOpen, setIsThanksOpen, setIsSponsoOpen, setIsContacOpen, setIsMobileHeadMore, setIsSupporOpen }
 })
