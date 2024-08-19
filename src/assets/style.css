@@ -4,8 +4,9 @@
     padding: 0;
     font-weight: normal;
     scroll-behavior: smooth;
+    font-optical-sizing: auto;
     -webkit-touch-callout: none;
-    font-family: "MiSans","HarmonyOS","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif!important;
+    font-family: "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif!important;
 }
 
 html {
@@ -69,7 +70,7 @@ div.page-container header.page-header {
     background-color: #ffffff;
 }
 
-@font-face {
+/* @font-face {
     font-family: "MiSans";
     src: url("./fonts/MiSans/MiSans-Normal.ttf");
 }
@@ -77,7 +78,7 @@ div.page-container header.page-header {
 @font-face {
     font-family: "HarmonyOS";
     src: url("./fonts/HarmonyOS/HarmonyOS.woff");
-}
+} */
 
 @media (min-width: 768px) {
     body {
