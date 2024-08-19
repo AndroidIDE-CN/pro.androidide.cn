@@ -11,9 +11,6 @@ const isLoadComplete = async () => {
     status = true;
     import("@/assets/paces/remove.css")
     applicationStore.setIsLoadinfgStatus(false);
-    if (applicationStore.isDeviceMobile) {
-      document.getElementById("application").style.paddingTop = "65px";
-    } else document.getElementById("application").style.paddingTop = "75px";
   });
 }
 

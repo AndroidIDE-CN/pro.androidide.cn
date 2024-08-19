@@ -6,13 +6,7 @@ import config from '@/scripts/config'
 import axiostool from '@/scripts/axiostool'
 
 const isMobile = () => {
-  if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i) || window.innerWidth <= 1000) {
-    document.getElementById("application").style.paddingTop = "65px";
-    return true;
-  } else {
-    document.getElementById("application").style.paddingTop = "75px";
-    return false;
-  }
+  return (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i) || window.innerWidth <= 1000);
 }
 
 onresize = async () => {

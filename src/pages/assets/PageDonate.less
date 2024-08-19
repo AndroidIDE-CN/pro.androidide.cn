@@ -33,6 +33,22 @@ div.pay-item {
         margin: auto;
         max-height: 90%;
     }
+
+    svg.success {
+        display: none;
+    }
+}
+
+div.pay-item.item-active {
+    background-color: #dd524d!important;
+    
+    svg {
+        display: none;
+    }
+    
+    svg.success {
+        display: block;
+    }
 }
 
 input.input-container {
@@ -80,6 +96,14 @@ div.price-item {
         font-size: 1rem;
         text-align: center;
         background-color: transparent;
+    }
+}
+
+div.input-group {
+    display: flex;
+
+    input:nth-child(1) {
+        width: 75%;
     }
 }
 

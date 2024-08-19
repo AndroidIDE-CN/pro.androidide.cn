@@ -19,8 +19,4 @@
 
 <style>
     @import url("./assets/ErrorFaiLayout.css");
-
-    div#application:has(div.site-error) {
-        padding-top: 0!important;
-    }
 </style>

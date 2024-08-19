@@ -10,7 +10,7 @@
     const applicationStore = utils.useApplicationStore();
 
     onMounted(async () => {
-        let requestNum = 2;
+        let requestNum = 1;
         const [inViewport] = useInViewport(domRef);
 
         watch(inViewport,async () => {
