@@ -88,7 +88,9 @@
 </script>
 
 <template>
-    <HeadModel/><MainModel/><StatisticsFrame/><SelectntroFrame/><FriendsFrame/><FootModel/>
+    <div v-show="!applicationStore.isLoadingStatus && !applicationStore.isSiteErrStatus">
+        <HeadModel/><MainModel/><StatisticsFrame/><SelectntroFrame/><FriendsFrame/><FootModel/>
+    </div>
 
     <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isUseAgrOpen" title="使用协议" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)" :close-on-press-escape="false" :close-on-click-modal="false">
         <div class="innerHtml" v-html="modelConfig.useAgrHtml"></div>
