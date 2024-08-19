@@ -16,8 +16,10 @@
 
     watch(currentPrice,() => {
         if (currentPrice.value === 'other') {
-            otherPriceOnly.value = '';
             keyboardStatus.value = true;
+            if (applicationStore.isDeviceMobile) {
+                otherPriceOnly.value = '';
+            } else otherPriceOnly.value = '0';
         } else otherPriceOnly.value = '其他金额';
     });
     const onKeyboardInput = async (price) => {
