@@ -72,7 +72,7 @@ div.price-item {
   text-align: center;
   border-radius: 8px;
   width: calc(100% - 30px);
-  background-color: #ffffff;
+  background-color: #f1f1f1;
 }
 div.price-item input.price-input {
   width: 100%;
@@ -96,11 +96,4 @@ div.price-item.item-active {
 }
 div.price-item.item-active input.price-input {
   color: #ffffff;
-}
-div.donate-content div.price-item {
-  background-color: #f1f1f1;
-}
-div.donate-content div.price-item.item-active {
-  color: #ffffff;
-  background-color: #dd524d;
 }

@@ -29,7 +29,6 @@
         document.querySelector("#application").style = `
             min-height: 100%;
             padding-top: 0!important;
-            background-color: #f7f8fa;
         `;
     });
 
