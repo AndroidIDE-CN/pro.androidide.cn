@@ -20,7 +20,7 @@
   <!-- <el-watermark content="AIDE Pro">
     <RouterView v-if="!applicationStore.isSiteErrStatus && !applicationStore.isLoadingStatus"/>
   </el-watermark> -->
-  <RouterView v-if="!applicationStore.isLoadingStatus && !applicationStore.isSiteErrStatus"/>
+  <RouterView v-show="!applicationStore.isLoadingStatus && !applicationStore.isSiteErrStatus"/>
   
   <ErrorFaiLayout v-if="applicationStore.isSiteErrStatus" :errorInfo="applicationStore.siteErrorDetail"/>
   <!-- 底部安全区 -->
