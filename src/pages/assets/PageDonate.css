@@ -84,6 +84,7 @@ div.price-item input.price-input {
   background-color: transparent;
 }
 div.input-group {
+  width: 100%;
   display: flex;
 }
 div.input-group input:nth-child(1) {
