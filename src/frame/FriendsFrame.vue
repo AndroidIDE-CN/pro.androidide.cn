@@ -1,36 +1,24 @@
 
 <script setup>
     import utils from '@/scripts/utils'
-    import { ref, onMounted, watch } from 'vue'
-    import { useInViewport } from 'vue-hooks-plus'
+    import { ref, onMounted } from 'vue'
     
-    const domRef = ref(null);
     const siteConfig = ref(null);
     const readyStatus = ref(false);
     const applicationStore = utils.useApplicationStore();
 
     onMounted(async () => {
-        let requestNum = 1;
-        const [inViewport] = useInViewport(domRef);
-
-        watch(inViewport,async () => {
-            if (requestNum == 0) {
-                if (!applicationStore.isLoadingStatus && inViewport) {
-                    await utils.axiostool.sendHttpGet(utils.apiConfig.friends).then((data) => {
-                        siteConfig.value = data;
-                        readyStatus.value = true;
-                    }).catch(async (error) => {
-                        throw new Error(error);
-                    });
-                }
-            }
-            requestNum--;
+        await utils.axiostool.sendHttpGet(utils.apiConfig.friends).then((data) => {
+            siteConfig.value = data;
+            readyStatus.value = true;
+        }).catch(async (error) => {
+            throw new Error(error);
         });
     });
 </script>
 
 <template>
-    <div class="friends-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'" ref="domRef">
+    <div class="friends-frame" :class="applicationStore.isDeviceMobile && 'frame-mobile'">
         <div class="friends-box">
             <h1 class="frame-title">友情链接</h1>
             <p class="frame-desc">无需因陌生而胆怯，我眼里都是灰烬~</p>
