@@ -5,8 +5,10 @@
      */
 
     import utils from '@/scripts/utils'
+    import { useRoute } from 'vue-router'
     import { onMounted, ref, watch } from 'vue'
 
+    const route = useRoute();
     const payAction = ref('0');
     const currentPrice = ref('0');
     const keyboardStatus = ref(false);
@@ -38,7 +40,7 @@
 </script>
 
 <template>
-    <div :class="`page-donate ${applicationStore.isDeviceMobile && 'page-container'}`">
+    <div :class="`page-donate ${applicationStore.isDeviceMobile && 'page-container'}`" :style="{ paddingTop: route.query.from === 'app' ? '0px' : '10px' }">
         <!-- <header class="page-header">捐助我们</header> -->
 
         <van-grid :column-num="3" style="width: 95%; margin: 0 auto;">
