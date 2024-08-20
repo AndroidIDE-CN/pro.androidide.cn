@@ -65,6 +65,10 @@
                 <input class="input-container" type="text" placeholder="请输入QQ号，留空表示匿名捐助">
             </div>
         </van-grid>
+        
+        <van-grid :column-num="3" style="width: 95%; margin: 20px auto;">
+            <input class="input-container" type="text" placeholder="请输入留言">
+        </van-grid>
 
         <van-grid :column-num="3" style="width: 95%; margin: 20px auto;">
             <van-grid-item @click="payAction = '1'">
