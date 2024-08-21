@@ -5,8 +5,10 @@
      */
 
     import utils from '@/scripts/utils'
+    import { useRoute } from 'vue-router'
     import { onMounted, ref, watch } from 'vue'
 
+    const route = useRoute();
     const isBlur = ref(false);
     const payAction = ref('0');
     const currentPrice = ref('0');
@@ -50,8 +52,8 @@
 </script>
 
 <template>
-    <div :class="`page-donate ${applicationStore.isDeviceMobile && 'page-container'}`" :style="{ paddingTop: '10px' }">
-        <!-- <header class="page-header">捐助我们</header> -->
+    <div :class="`page-donate ${applicationStore.isDeviceMobile && 'page-container'}`" :style="{ paddingTop: (route.query.from !== 'app' && applicationStore.isDeviceMobile) ? '75px' : '10px' }">
+        <header class="page-header" v-if="route.query.from !== 'app' && applicationStore.isDeviceMobile">捐助我们</header>
 
         <van-grid :column-num="3" style="width: 95%; margin: 0 auto;">
             <van-grid-item v-for="(item ,index) in priceList" :key="index" @click="currentPrice = item">

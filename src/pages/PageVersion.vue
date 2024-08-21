@@ -7,7 +7,9 @@
 
     import utils from '@/scripts/utils'
     import { onMounted, ref } from 'vue'
+    import { useRoute } from 'vue-router'
 
+    const route = useRoute();
     const versionList = ref([]);
     const activeCollapse = ref(['1']);
 
@@ -20,6 +22,7 @@
     });
 
     document.title = "版本列表";
+    if (route.query.from !== 'app') location.href = '/';
 </script>
 
 <template>

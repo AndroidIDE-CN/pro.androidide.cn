@@ -5,11 +5,12 @@
      * 支持人员页面
      */
 
+    
     import utils from '@/scripts/utils'
     import { onMounted, ref } from 'vue'
-    import { useRouter } from 'vue-router'
+    import { useRoute } from 'vue-router'
 
-    const router = useRouter();
+    const route = useRoute();
     const supPersonList = ref([]);
 
     onMounted(async () => {
@@ -19,8 +20,9 @@
             ElMessage({ message: '请求接口失败', type: 'error', plain: true});
         });
     });
-
+    
     document.title = "支持人员";
+    if (route.query.from !== 'app') location.href = '/';
 </script>
 
 <template>

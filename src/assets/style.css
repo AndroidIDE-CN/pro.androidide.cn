@@ -68,6 +68,7 @@ div.page-container header.page-header {
     line-height: 65px;
     text-align: center;
     background-color: #ffffff;
+    border-bottom: 1px solid #e3e8f7;
 }
 
 /* @font-face {

@@ -7,7 +7,9 @@
 
     import utils from '@/scripts/utils'
     import { onMounted, ref } from 'vue'
+    import { useRoute } from 'vue-router'
 
+    const route = useRoute();
     const teanPersonList = ref([]);
 
     onMounted(async () => {
@@ -17,8 +19,9 @@
             ElMessage({ message: '请求接口失败', type: 'error', plain: true});
         });
     });
-
+    
     document.title = "团队成员";
+    if (route.query.from !== 'app') location.href = '/';
 </script>
 
 <template>
