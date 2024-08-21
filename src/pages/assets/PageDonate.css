@@ -1,6 +1,9 @@
 .van-grid::after {
   content: unset;
 }
+.van-key--blue {
+  background: #dd524d;
+}
 .van-number-keyboard {
   padding-bottom: 10px;
 }
@@ -25,7 +28,7 @@ div.pay-item {
   border: 2px solid #DCDFE6;
 }
 div.pay-item span.item-name {
-  color: #909399;
+  color: #606266;
   margin-left: 8px;
   font-size: 0.9rem;
 }
@@ -60,12 +63,12 @@ div.price-item {
   height: 65px;
   cursor: pointer;
   padding: 0 10px;
-  color: #909399;
+  color: #606266;
   line-height: 65px;
   text-align: center;
   border-radius: 8px;
   width: calc(100% - 30px);
-  background-color: #F0F2F5;
+  background-color: #f2f3f5;
 }
 div.price-item input.price-input {
   width: 100%;
@@ -79,7 +82,7 @@ div.price-item input.price-input {
 div.input-group {
   width: 100%;
   display: flex;
-  color: #909399;
+  color: #606266;
 }
 div.input-group input:nth-child(1) {
   width: 75%;
