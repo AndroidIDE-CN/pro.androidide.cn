@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 
 import './assets/style.css'
-import { Icon } from 'vant'
 import { Lazyload } from 'vant'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -13,7 +12,6 @@ const application = createApp(Application);
 
 (async () => {
     application.use(createPinia());
-    application.use(Icon);
     application.use(router);
     application.use(Lazyload, {lazyComponent: true});
     application.mount('#application');
