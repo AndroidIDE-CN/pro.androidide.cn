@@ -2,9 +2,7 @@
 <script setup>
     import { onMounted, ref } from 'vue'
     import utils from '@/scripts/utils'
-    import { useToast } from 'vue-toastification'
 
-    const toast = useToast();
     const siteConfig = ref(null);
     const readyStatus = ref(false);
     const functionStore = utils.useFunctionStore();
@@ -30,8 +28,7 @@
                 <span class="link-text" @click="functionStore.setIsHisVerOpen(true)">历史版本</span>
                 <span class="link-text" @click="functionStore.setIsSponsoOpen(true)">捐助我们</span>
                 <span v-for="(item,index) in siteConfig" :key="index">
-                    <a class="link-text"  :href="item.href" :title="item.title" :target="item.target" v-if="!item.toast">{{ item.title }}</a>
-                    <a class="link-text" :title="item.title" v-if="item.toast" @click="toast.success(item.toastText);" style="cursor: pointer">{{ item.title }}</a>
+                    <a class="link-text" :href="item.href" :title="item.title" :target="item.target">{{ item.title }}</a>
                 </span>
             </div>
 
