@@ -24,12 +24,9 @@ div.pay-item {
   background-color: #ffffff;
   border: 2px solid #dddddd;
 }
-div.pay-item svg.success {
-  display: none;
-}
 div.pay-item span.item-name {
-  font-size: 0.9rem;
   margin-left: 8px;
+  font-size: 0.9rem;
 }
 div.pay-item.item-active {
   border: 2px solid var(--color);
