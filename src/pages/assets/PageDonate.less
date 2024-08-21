@@ -18,37 +18,43 @@
 }
 
 div.pay-item {
-    height: 60px;
-    padding: 0 10px;
+    height: 48px;
+
     display: flex;
     cursor: pointer;
-    line-height: 65px;
     text-align: center;
-    border-radius: 8px;
-    width: calc(100% - 30px);
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 10px);
     background-color: #ffffff;
+    border: 2px solid #dddddd;
 
     svg {
-        width: 95%;
-        margin: auto;
-        max-height: 90%;
+        
     }
 
     svg.success {
         display: none;
+    }
+
+    span.item-name {
+        font-size: 0.9rem;
+        margin-left: 5px;
     }
 }
 
 div.pay-item.item-active {
-    background-color: #dd524d!important;
+    border: 2px solid var(--color);
+    box-shadow: 0 4px 10px var(--shadow);
     
-    svg {
-        display: none;
-    }
+    // svg {
+    //     display: none;
+    // }
     
-    svg.success {
-        display: block;
-    }
+    // svg.success {
+    //     display: block;
+    // }
 }
 
 input.input-container {

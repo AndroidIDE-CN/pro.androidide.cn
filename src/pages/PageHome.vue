@@ -3,6 +3,7 @@
 <script setup>
     import { reactive, ref } from 'vue';
     import utils from '@/scripts/utils';
+    import "@/assets/paces/center-simple.css"
     import HeadModel from '@/model/HeadModel.vue';
     import MainModel from '@/model/MainModel.vue';
     import FootModel from '@/model/FootModel.vue';
@@ -20,7 +21,7 @@
         try {
             location.href = link;
         } catch(error) {
-            ElMessage({ message: '链接跳转失败', type: 'error', plain: true})
+            ElMessage({ message: '链接跳转失败', type: 'error', plain: true});
         }
     }
 

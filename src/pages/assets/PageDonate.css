@@ -13,32 +13,27 @@
   content: unset;
 }
 div.pay-item {
-  height: 60px;
-  padding: 0 10px;
+  height: 48px;
   display: flex;
   cursor: pointer;
-  line-height: 65px;
   text-align: center;
-  border-radius: 8px;
-  width: calc(100% - 30px);
+  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 10px);
   background-color: #ffffff;
-}
-div.pay-item svg {
-  width: 95%;
-  margin: auto;
-  max-height: 90%;
+  border: 2px solid #dddddd;
 }
 div.pay-item svg.success {
   display: none;
 }
+div.pay-item span.item-name {
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
 div.pay-item.item-active {
-  background-color: #dd524d !important;
-}
-div.pay-item.item-active svg {
-  display: none;
-}
-div.pay-item.item-active svg.success {
-  display: block;
+  border: 2px solid var(--color);
+  box-shadow: 0 4px 10px var(--shadow);
 }
 input.input-container {
   width: 100%;

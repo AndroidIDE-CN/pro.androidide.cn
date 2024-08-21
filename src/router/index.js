@@ -9,7 +9,7 @@ const isLoadComplete = async () => {
   const applicationStore = useApplicationStore();
   Pace.on("done", async () => {
     status = true;
-    import("@/assets/paces/remove.css")
+    import("@/assets/paces/remove.css");
     applicationStore.setIsLoadinfgStatus(false);
   });
 }
@@ -56,9 +56,7 @@ const createRoutes = createRouter({
 createRoutes.beforeEach(async (to, from, next) => {
 	if (to === from) return;
 	const applicationStore = useApplicationStore();
-  if (to.fullPath !== '/') {
-    import("@/assets/paces/remove.css");
-  } else {
+  if (to.fullPath === '/') {
     Pace.on("start", async () => {
       if (status) return Pace.stop();
       await applicationStore.setIsLoadinfgStatus(true);
