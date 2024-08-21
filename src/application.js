@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 
 import './assets/style.css'
-import "@/scripts/ready.js"
 import { Icon } from 'vant'
 import { Lazyload } from 'vant'
 import { createApp } from 'vue'
