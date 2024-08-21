@@ -22,9 +22,10 @@ div.pay-item {
   justify-content: center;
   width: calc(100% - 10px);
   background-color: #ffffff;
-  border: 2px solid #dddddd;
+  border: 2px solid #DCDFE6;
 }
 div.pay-item span.item-name {
+  color: #909399;
   margin-left: 8px;
   font-size: 0.9rem;
 }
@@ -38,7 +39,7 @@ input.input-container {
   outline: none;
   padding: 0 10px;
   border-radius: 5px;
-  border: 2px solid #dddddd;
+  border: 2px solid #DCDFE6;
 }
 input.input-container:focus {
   border: 2px solid #dd524d;
@@ -59,11 +60,12 @@ div.price-item {
   height: 65px;
   cursor: pointer;
   padding: 0 10px;
+  color: #909399;
   line-height: 65px;
   text-align: center;
   border-radius: 8px;
   width: calc(100% - 30px);
-  background-color: #f1f1f1;
+  background-color: #F0F2F5;
 }
 div.price-item input.price-input {
   width: 100%;
@@ -77,6 +79,7 @@ div.price-item input.price-input {
 div.input-group {
   width: 100%;
   display: flex;
+  color: #909399;
 }
 div.input-group input:nth-child(1) {
   width: 75%;
