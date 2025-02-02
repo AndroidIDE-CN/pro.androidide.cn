@@ -1,0 +1,75 @@
+div.head-container {
+  top: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 999;
+  position: fixed;
+  overflow: hidden;
+  transition: height 0.3s;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e3e8f7;
+}
+div.head-container div.head-box {
+  height: 75px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  width: var(--application-width);
+}
+div.head-container div.head-box span.aide-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 75px;
+  text-align: center;
+  color: var(--dominColor);
+}
+div.head-container div.head-box img.logo-box {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+div.head-container div.head-box div.link-box {
+  height: 100%;
+  margin-left: auto;
+}
+div.head-container div.head-box div.link-box .link-text {
+  cursor: pointer;
+  color: #343a40;
+  line-height: 75px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+div.head-container div.head-box div.link-box .link-text:hover {
+  color: var(--dominColor);
+}
+div.head-container div.head-box button.more-btn {
+  width: 32px;
+  height: 100%;
+  border: none;
+  outline: none;
+  margin-left: auto;
+  background: transparent;
+}
+div.head-container div.head-box button.more-btn svg {
+  height: 100%;
+}
+div.head-container div.head-box button.more-btn svg path {
+  fill: var(--dominColor);
+}
+div.head-container div.head-more {
+  width: 100%;
+  transition: 0.3s;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+div.head-container div.head-more div.link-item {
+  width: 100%;
+  height: 45px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+}
+div.head-container div.head-more div.link-item .link-text {
+  color: #343a40;
+}

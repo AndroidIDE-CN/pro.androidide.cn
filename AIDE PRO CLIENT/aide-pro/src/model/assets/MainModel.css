@@ -1,0 +1,120 @@
+div.main-container {
+  width: 100%;
+  display: flex;
+  padding: 35px 0;
+  position: relative;
+  align-items: center;
+  padding-bottom: 25px;
+  background: linear-gradient(#ffffff, #f4f5f7) no-repeat 0;
+}
+div.main-container div.main-box {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 75px;
+  align-items: center;
+  flex-direction: column;
+  width: var(--application-width);
+}
+div.main-container div.main-box div.container {
+  width: 100%;
+  height: 300px;
+  margin-top: 45px;
+}
+div.main-container div.main-box div.container p.aide-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-clip: text;
+}
+div.main-container div.main-box div.container p.aide-description {
+  line-clamp: 2;
+  font-size: 22px;
+  max-width: 800px;
+  overflow: hidden;
+  line-height: 1.5;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  margin: 24px auto 40px;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  color: rgba(60, 60, 60, 0.7);
+}
+div.main-container div.main-box div.container p.button-group {
+  display: flex;
+  justify-content: center;
+}
+div.main-container div.main-box div.container p.button-group .aide-btn {
+  margin: 0 15px;
+}
+div.main-container div.main-box div.container p.button-group .aide-btn.btn-border-primary {
+  background: linear-gradient(#f1f1f1, #f1f1f1) padding-box, linear-gradient(45deg, #42d392, #647eff) border-box;
+  border: 2px solid transparent;
+}
+div.main-container div.main-box.box-mobile {
+  height: auto;
+  display: unset;
+  margin-top: 65px;
+}
+div.main-container div.main-box.box-mobile div.container {
+  height: unset;
+  flex-direction: column;
+}
+div.main-container svg.down-scroll {
+  left: 50%;
+  bottom: 25px;
+  position: absolute;
+  transform: translateX(-50%);
+  animation: identifier 3s linear infinite;
+}
+div.main-container svg.down-scroll path {
+  fill: var(--dominColor);
+}
+div.main-container.container-mobile {
+  height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.main-container.container-mobile div.main-box {
+  margin-top: unset;
+}
+div.main-container.container-mobile div.main-box div.container p.aide-title {
+  font-size: 3.2rem;
+}
+div.main-container.container-mobile div.main-box div.container p.aide-description {
+  max-width: 85%;
+  font-size: 18px;
+}
+div.main-container.container-mobile div.main-box div.container p.button-group {
+  flex-direction: column;
+}
+div.main-container.container-mobile div.main-box div.container p.button-group .aide-btn {
+  width: 90%;
+  height: 50px;
+  margin: 0 auto 20px;
+}
+div.van-action-sheet__description {
+  color: #343a40;
+  font-size: 1.25rem;
+}
+span.van-action-sheet__name {
+  color: #8a90a2;
+}
+@keyframes identifier {
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  25% {
+    transform: translateY(-15px) translateX(-50%);
+  }
+  50% {
+    transform: translateY(0) translateX(-50%);
+  }
+  75% {
+    transform: translateY(15px) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+}

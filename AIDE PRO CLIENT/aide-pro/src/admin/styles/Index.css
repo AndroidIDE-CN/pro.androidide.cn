@@ -1,0 +1,106 @@
+div.page-admin {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  --admin-header-height: 62px;
+}
+div.page-admin header.admin-header {
+  width: 100%;
+}
+div.page-admin section.el-container {
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+}
+div.page-admin section.el-container aside.el-aside {
+  height: 100%;
+  background-color: #304156;
+}
+div.page-admin section.el-container aside.el-aside p.admin-title {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  height: var(--admin-header-height);
+  text-shadow: var(--el-box-shadow-light);
+  line-height: var(--admin-header-height);
+}
+div.page-admin section.el-container aside.el-aside ul.el-menu {
+  border-right: unset;
+}
+div.page-admin section.el-container aside.el-aside ul.el-menu li.el-menu-item {
+  font-size: 1rem;
+}
+div.page-admin section.el-container section.el-container header.el-header {
+  background-color: #ffffff;
+  height: var(--admin-header-height);
+  border-bottom: 1px solid #e3e8f7;
+}
+div.page-admin section.el-container section.el-container header.el-header div.admin-topnav {
+  display: flex;
+  width: inherit;
+  height: inherit;
+}
+div.page-admin section.el-container section.el-container header.el-header div.admin-topnav span.admin-title {
+  font-size: 18px;
+  line-height: var(--admin-header-height);
+}
+div.page-admin section.el-container section.el-container header.el-header div.admin-topnav div.action-box {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  margin-left: auto;
+  margin-right: 10px;
+  align-items: center;
+}
+div.page-admin section.el-container section.el-container header.el-header div.admin-topnav div.action-box i.el-icon {
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none!important;
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+div.page-admin section.el-container section.el-container header.el-header div.admin-topnav div.action-box i.el-icon:hover {
+  background-color: rgba(0, 0, 0, 0.025);
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame {
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.action-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.el-table--fit * {
+  text-align: center;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.el-table--fit thead {
+  height: 50px;
+  font-size: 16px;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.el-table--fit tbody td {
+  height: 50px;
+  font-size: 15px;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.el-table--fit div.cell {
+  white-space: nowrap;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.el-pagination {
+  margin-top: 25px;
+  justify-content: center;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.el-form-item {
+  flex-direction: column;
+}
+div.page-admin section.el-container section.el-container main.el-main div.admin-content div.content-frame div.el-form-item label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}

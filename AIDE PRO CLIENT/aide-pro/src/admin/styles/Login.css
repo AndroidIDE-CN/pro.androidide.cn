@@ -1,0 +1,44 @@
+div.page-admin {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../image/login-background.jpg");
+}
+div.page-admin div.login-container {
+  width: 360px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: var(--el-box-shadow-light);
+}
+div.page-admin div.login-container p.login-title {
+  font-weight: 500;
+  color: #707070;
+  font-size: 1.45rem;
+  text-align: center;
+  margin: 0 auto 30px auto;
+}
+div.page-admin div.login-container div.el-form-item {
+  flex-direction: column;
+}
+div.page-admin div.login-container div.el-form-item label {
+  color: #707070;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+div.page-admin div.login-container div.el-form-item input {
+  height: 40px;
+}
+div.page-admin div.login-container button {
+  width: 100%;
+  height: 40px;
+  margin-top: 15px;
+}
+div.page-admin.page-mobile div.login-container {
+  width: calc(95% - 40px);
+}
