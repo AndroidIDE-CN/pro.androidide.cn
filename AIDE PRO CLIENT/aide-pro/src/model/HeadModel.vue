@@ -40,6 +40,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/HeadModel.css");
+<style lang="scss">
+    @import url("./assets/HeadModel.scss");
 </style>

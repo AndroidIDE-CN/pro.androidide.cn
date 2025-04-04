@@ -17,3 +17,7 @@
   <!-- 底部安全区 -->
   <div class="van-safe-area-bottom"></div>
 </template> 
+
+<style lang="scss">
+  @import url("./assets/style.scss");
+</style>

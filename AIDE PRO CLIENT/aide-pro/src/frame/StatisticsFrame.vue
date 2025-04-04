@@ -34,6 +34,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/StatisticsFrame.css");
+<style lang="scss">
+    @import url("./assets/StatisticsFrame.scss");
 </style>

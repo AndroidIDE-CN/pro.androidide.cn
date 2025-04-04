@@ -71,11 +71,16 @@
             });
         }
     }
+
+    // <StatisticsFrame/><FriendsFrame/>
 </script>
 
 <template>
     <div v-show="!applicationStore.isLoadingStatus && !applicationStore.isSiteErrStatus">
-        <HeadModel/><MainModel/><StatisticsFrame/><SelectntroFrame/><FriendsFrame/><FootModel/>
+        <HeadModel/><MainModel/>
+        <SelectntroFrame/>
+        
+        <FootModel/>
     </div>
 
     <el-dialog align-center destroy-on-close class="application-dialog" v-model="functionStore.isUseAgrOpen" title="使用协议" :width="applicationStore.isDeviceMobile ? '90%' : '720px'" @open="functionStore.setIsMobileHeadMore(false)">
@@ -147,7 +152,7 @@
     </el-dialog>
 </template>
 
-<style>
-    @import url("./assets/PageHome.css");
+<style lang="scss">
+    @import url("./assets/PageHome.scss");
     @import url("@/assets/paces/center-simple.css");
 </style>

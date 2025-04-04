@@ -10,7 +10,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("admin/contact")
-@CrossOrigin(allowCredentials = "true", origins = "http://11.47.17.166:5173/")
 public class AdminContactController {
 
     private final TokenService tokenService;

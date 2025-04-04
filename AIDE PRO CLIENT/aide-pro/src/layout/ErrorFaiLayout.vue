@@ -17,6 +17,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/ErrorFaiLayout.css");
+<style lang="scss">
+    @import url("./assets/ErrorFaiLayout.scss");
 </style>

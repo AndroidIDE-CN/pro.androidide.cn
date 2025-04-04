@@ -23,6 +23,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/FriendsFrame.css");
+<style lang="scss">
+    @import url("./assets/FriendsFrame.scss");
 </style>

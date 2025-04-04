@@ -45,7 +45,7 @@ declare module 'vue' {
     MainModel: typeof import('./src/model/MainModel.vue')['default']
     None: typeof import('./src/admin/None.vue')['default']
     NotFouLayout: typeof import('./src/layout/NotFouLayout.vue')['default']
-    PageDonate: typeof import('./src/PageDonate.vue')['default']
+    PageDonate: typeof import('./src/pages/PageDonate.vue')['default']
     PageHome: typeof import('./src/pages/PageHome.vue')['default']
     PageSupport: typeof import('./src/pages/PageSupport.vue')['default']
     PageTeam: typeof import('./src/pages/PageTeam.vue')['default']

@@ -41,6 +41,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./styles/Index.css");
+<style lang="scss">
+    @import url("./styles/Index.scss");
 </style>

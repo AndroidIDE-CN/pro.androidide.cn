@@ -1,0 +1,139 @@
+
+div.page-admin {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+
+    --admin-header-height: 62px;
+
+    header.admin-header {
+        width: 100%;
+    }
+
+    section.el-container {
+        width: inherit;
+        height: inherit;
+        overflow: hidden;
+
+        aside.el-aside {
+            height: 100%;
+            background-color: rgb(48, 65, 86);
+
+            p.admin-title {
+                font-size: 18px;
+                color: #ffffff;
+                font-weight: bold;
+                text-align: center;
+                height: var(--admin-header-height);
+                text-shadow: var(--el-box-shadow-light);
+                line-height: var(--admin-header-height);
+            }
+
+            ul.el-menu {
+                border-right: unset;
+
+                li.el-menu-item {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        section.el-container {
+            header.el-header {
+                background-color: #ffffff;
+                height: var(--admin-header-height);
+                border-bottom: 1px solid #e3e8f7;
+
+                div.admin-topnav {
+                    display: flex;
+                    width: inherit;
+                    height: inherit;
+
+                    span.admin-title {
+                        font-size: 18px;
+                        line-height: var(--admin-header-height);
+                    }
+
+                    div.action-box {
+                        display: flex;
+                        width: inherit;
+                        height: inherit;
+                        margin-left: auto;
+                        margin-right: 10px;
+                        align-items: center;
+
+                        i.el-icon {
+                            cursor: pointer;
+                            border-radius: 5px;
+                            outline: none!important;
+                            background-color: transparent;
+                            transition: background-color 0.5s;
+
+                            &:hover {
+                                background-color: rgba(0, 0, 0, 0.025);
+                            }
+                        }
+                    }
+                }
+            }
+
+            main.el-main {
+                div.admin-content {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+
+                    div.content-frame {
+                        width: inherit;
+                        height: inherit;
+                        overflow: hidden;
+                        overflow-y: scroll;
+
+                        div.action-box {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        div.el-table--fit {
+                            * {
+                                text-align: center;
+                            }
+
+                            thead {
+                                height: 50px;
+                                font-size: 16px;
+                            }
+
+                            tbody {
+                                td {
+                                    height: 50px;
+                                    font-size: 15px;
+                                }
+                            }
+
+                            div.cell {
+                                white-space: nowrap;
+                            }
+                        }
+
+                        div.el-pagination {
+                            margin-top: 25px;
+                            justify-content: center;
+                        }
+
+                        div.el-form-item {
+                            flex-direction: column;
+
+                            label {
+                                font-size: 16px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

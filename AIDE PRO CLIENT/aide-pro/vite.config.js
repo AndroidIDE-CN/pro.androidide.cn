@@ -23,7 +23,11 @@ export default defineConfig({
     terseroptions: {compress: {drop_console: true,drop_debugger: true}},
     minify: true,brotliSize: false,assetsDir: 'assets',assetsInlineLimit: 5 * 1024 * 1024,
   },
-  css: {modules: {generateScopedName: '[name]-[hash:base64:5]'}},
+  css: { modules: {generateScopedName: '[name]-[hash:base64:5]'}, preprocessorOptions: {  
+    scss: {  
+      silenceDeprecations: ['legacy-js-api', 'color-functions'],  
+    },  
+  }},
   entry: '/src/application.js',output: {manualChunks(id) {if (id.includes('node_modules')) {return 'vendor';}}},resolve: {alias: {'@': fileURLToPath(new URL('./src', import.meta.url))}},
   server: {host: '0.0.0.0',hot: {reload: true,rerender: true},routes: {beforeEnter(req, res, next) {if (/\.js$/.test(req.path)) res.redirect('/');else next();if (/\.md$/.test(req.path)) res.redirect('/');else next();}}},
   plugins: [vue(),base64SetPlugin(),AutoImport({resolvers: [ElementPlusResolver(),VantResolver(),VueHooksPlusResolver()]}),Components({ resolvers: [ElementPlusResolver(),VantResolver()], dirs: ['src'], extensions: ['vue','jsx'], dts: 'aide.d.ts'  }), viteCompression({ verbose: true, disable: false, deleteOriginFile: false, threshold: 5120, algorithm: 'gzip', ext: '.gz' })], 

@@ -36,8 +36,3 @@
         </van-collapse>
     </div>
 </template>
-
-<style>
-    @import url("./assets/PageVersion.css");
-</style>
-

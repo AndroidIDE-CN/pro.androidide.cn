@@ -13,5 +13,4 @@ public class AdminHistoricalModel {
     private Long versionCode;
     private String updateLog;
     private String versionName;
-    private String downloadUrl;
 }

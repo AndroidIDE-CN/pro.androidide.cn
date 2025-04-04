@@ -11,7 +11,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("admin/historical")
-@CrossOrigin(allowCredentials = "true", origins = "http://11.47.17.166:5173/")
 public class AdminHistoricalController {
 
     private final TokenService tokenService;
@@ -42,9 +41,8 @@ public class AdminHistoricalController {
             String size = data.get("size").toString();
             String updateLog = data.get("updateLog").toString();
             String versionName = data.get("versionName").toString();
-            String downloadUrl = data.get("downloadUrl").toString();
             Long versionCode = Long.parseLong(data.get("versionCode").toString());
-            return adminHistoricalService.addAdminHistorical(versionCode, versionName, size, downloadUrl, updateLog);
+            return adminHistoricalService.addAdminHistorical(versionCode, versionName, size, updateLog);
         } catch (Exception e) {
             new ConsolePrints().printErrorLog(e);
             return new HandleResults().handleResultByCode(500, null, "服务端异常");
@@ -59,9 +57,8 @@ public class AdminHistoricalController {
             String size = data.get("size").toString();
             String updateLog = data.get("updateLog").toString();
             String versionName = data.get("versionName").toString();
-            String downloadUrl = data.get("downloadUrl").toString();
             Long versionCode = Long.parseLong(data.get("versionCode").toString());
-            return adminHistoricalService.updateAdminHistorical(id, versionCode, versionName, size, downloadUrl, updateLog);
+            return adminHistoricalService.updateAdminHistorical(id, versionCode, versionName, size, updateLog);
         } catch (Exception e) {
             new ConsolePrints().printErrorLog(e);
             return new HandleResults().handleResultByCode(500, null, "服务端异常");

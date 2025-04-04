@@ -2,11 +2,14 @@ package com.api.aidepro.official.service;
 
 import com.api.aidepro.console.HandleResults;
 import com.api.aidepro.official.dao.*;
+import com.api.aidepro.official.model.HistoricalModel;
 import org.springframework.stereotype.Service;
 import com.api.aidepro.official.model.FriendsModel;
 import com.api.aidepro.official.model.DownloadModel;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -45,6 +48,8 @@ public class WebService {
     }
 
     public Map<String, Object> getWebHistorical() {
-        return new HandleResults().handleResultByCode(200, historicalDao.selectList(null), "获取成功");
+        List<HistoricalModel> historyList = historicalDao.selectList(null);
+        Collections.reverse(historyList); // 倒序
+        return new HandleResults().handleResultByCode(200, historyList, "获取成功");
     }
 }

@@ -16,7 +16,6 @@
         updateLog: null,
         versionName: null,
         versionCode: null,
-        downloadUrl: null,
     });
     const tableData = reactive([]);
     const dialogStatus = ref(false);
@@ -43,7 +42,6 @@
         formModel.size = null;
         formModel.updateLog = "";
         dialogStatus.value = true;
-        formModel.downloadUrl = "";
         formModel.versionCode = "";
         formModel.versionName = "";
     }
@@ -54,7 +52,6 @@
         dialogStatus.value = true;
         formModel.size = item.size;
         formModel.updateLog = item.updateLog;
-        formModel.downloadUrl = item.downloadUrl;
         formModel.versionCode = item.versionCode;
         formModel.versionName = item.versionName;
     }
@@ -71,7 +68,7 @@
     }
 
     const sendEditRequest = async () => {
-        if (formModel.name === "" || formModel.url === "" || formModel.icon === "" || formModel.description === "") return ElMessage({ message: "请填写完整信息", type: 'warning', plain: true});
+        if (formModel.size === "" || formModel.updateLog === "" || formModel.versionName === "" || formModel.versionCode === "") return ElMessage({ message: "请填写完整信息", type: 'warning', plain: true});
         await axiostool.sendPostRequest(`admin/historical/${ editModel.value ? 'add' : 'update' }`, formModel).then(async (response) => {
             if (response.code !== 200) {
                 ElMessage({ message: response.message, type: 'error', plain: true});
@@ -95,7 +92,6 @@
             <el-table-column prop="versionCode" label="版本号码"/>
             <el-table-column prop="versionName" label="版本名称"/>
             <el-table-column prop="size" label="版本大小"/>
-            <el-table-column prop="downloadUrl" label="下载链接"/>
             <el-table-column prop="updateLog" label="版本日志"/>
             <el-table-column label="更多操作" width="240px">
                 <template #default="scope">
@@ -118,10 +114,6 @@
 
                 <el-form-item label="版本大小">
                     <el-input v-model="formModel.size" placeholder="请输入版本大小" clearable/>
-                </el-form-item>
-
-                <el-form-item label="下载链接">
-                    <el-input v-model="formModel.downloadUrl" placeholder="请输入下载链接" clearable/>
                 </el-form-item>
 
                 <el-form-item label="版本日志">

@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 axios.defaults.withCredentials = true;
 
 const sendHttpGet = async (url) => {
-    return new axios.get(url).then(response => {
+    return new axios.get(url, {}).then(response => {
         if (response.data.code === 200) {
             return response.data.data;
         } else ElMessage({ message: response.data.message, type: 'error', plain: true});

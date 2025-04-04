@@ -2,7 +2,7 @@
 <!-- eslint-disable no-undef -->
 
 <script setup>
-    import { reactive } from 'vue'
+    import { reactive, ref } from 'vue'
     import utils from '@/scripts/utils'
     import axiostool from '@/scripts/axiostool'
 
@@ -10,9 +10,11 @@
         username: '',
         password: ''
     });
+    const loginStatus = ref(false);
 
     const sendLoginRequest = async () => {
         if (formModel.username === '' || formModel.password === '') return ElMessage({ message: '请检查输入格式', type: 'warning', plain: true });
+        loginStatus.value = true;
         await axiostool.sendLoginRequest(formModel.username, formModel.password).then((response) => {
             if (response.code == 200) {
                 ElMessage({ message: response.message, type: 'success', plain: true });
@@ -41,11 +43,11 @@
                     <el-input type="password" v-model="formModel.password" placeholder="请输入密码" show-password clearable/>
                 </el-form-item>
             </el-form>
-            <el-button type="primary" @click="sendLoginRequest">登录到系统</el-button>
+            <el-button type="primary" @click="sendLoginRequest">{{ loginStatus ? '登录到系统（登录中）' : '登录到系统' }}</el-button>
         </div>
     </div>
 </template>
 
-<style>
-    @import url("./styles/Login.css");
+<style lang="scss">
+    @import url("./styles/Login.scss");
 </style>

@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "axios": "^1.7.3",
-    "disable-devtool": "^0.3.7",
-    "element-plus": "^2.8.0",
+    "element-plus": "^2.9.3",
     "pace-js": "^1.2.4",
     "pinia": "^2.1.7",
     "vant": "^4.9.4",
@@ -25,6 +24,7 @@
     "@vue-hooks-plus/resolvers": "^1.2.5",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
+    "sass-embedded": "^1.83.4",
     "unplugin-auto-import": "^0.18.2",
     "unplugin-vue-components": "^0.27.3",
     "vite": "^5.3.1",

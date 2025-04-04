@@ -38,6 +38,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/PageTeam.css");
+<style lang="scss">
+    @import url("./assets/PageTeam.scss");
 </style>

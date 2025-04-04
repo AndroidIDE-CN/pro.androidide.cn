@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @RequestMapping("admin/user")
-@CrossOrigin(allowCredentials = "true", origins = "http://11.47.17.166:5173/")
 public class AdminUserController {
 
     private final AdminUserService adminUserService;

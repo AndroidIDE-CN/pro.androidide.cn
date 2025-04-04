@@ -13,7 +13,6 @@ import java.util.HashMap;
 
 @RestController
 @RequestMapping("web")
-@CrossOrigin(allowCredentials = "true", origins = "http://11.47.17.166:5173/")
 public class WebController {
 
     private final WebService webService;

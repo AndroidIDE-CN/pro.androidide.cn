@@ -1,13 +1,12 @@
 /* eslint-disable no-undef */
 
-import '@/assets/style.css'
 import { Lazyload } from 'vant'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import '@/assets/various/variour.css'
 
-import Application from './Application.vue'
 import router from './router'
+import Application from './Application.vue'
 
 const application = createApp(Application);
 

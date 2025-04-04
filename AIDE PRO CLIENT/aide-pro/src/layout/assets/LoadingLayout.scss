@@ -1,0 +1,16 @@
+
+div.van-overlay {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    background: var(--aide-bg-color)!important;
+}
+
+div.van-overlay img.loading-icon {
+    margin: auto;
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    position: relative;
+}

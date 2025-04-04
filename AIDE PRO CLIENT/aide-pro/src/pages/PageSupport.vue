@@ -40,6 +40,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/PageSupport.css");
+<style lang="scss">
+    @import url("./assets/PageSupport.scss");
 </style>

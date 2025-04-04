@@ -9,6 +9,7 @@ import com.api.aidepro.admin.man.AdminHistoricalManage;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
@@ -34,10 +35,10 @@ public class AdminHistoricalService {
         }
     }
 
-    public Map<String, Object> addAdminHistorical(Long versionCode, String versionName, String size, String downloadUrl, String updateLog) {
+    public Map<String, Object> addAdminHistorical(Long versionCode, String versionName, String size, String updateLog) {
         try {
             AdminHistoricalModel adminHistoricalModel = new AdminHistoricalModel();
-            new AdminHistoricalManage().addItem(adminHistoricalModel, versionCode, versionName, size, downloadUrl, updateLog);
+            new AdminHistoricalManage().addItem(adminHistoricalModel, versionCode, versionName, size, updateLog);
             if (adminHistoricalDao.insert(adminHistoricalModel) > 0) {
                 return new HandleResults().handleResultByCode(200, null, "新增成功");
             } else return new HandleResults().handleResultByCode(409, null, "新增失败");
@@ -47,10 +48,10 @@ public class AdminHistoricalService {
         }
     }
 
-    public Map<String, Object> updateAdminHistorical(int id, Long versionCode, String versionName, String size, String downloadUrl, String updateLog) {
+    public Map<String, Object> updateAdminHistorical(int id, Long versionCode, String versionName, String size, String updateLog) {
         try {
             AdminHistoricalModel adminHistoricalModel = new AdminHistoricalModel();
-            new AdminHistoricalManage().updateItem(adminHistoricalModel, id, versionCode, versionName, size, downloadUrl, updateLog);
+            new AdminHistoricalManage().updateItem(adminHistoricalModel, id, versionCode, versionName, size, updateLog);
             if (adminHistoricalDao.updateById(adminHistoricalModel) > 0) {
                 return new HandleResults().handleResultByCode(200, null, "修改成功");
             } else return new HandleResults().handleResultByCode(409, null, "修改失败");
@@ -63,6 +64,7 @@ public class AdminHistoricalService {
     public Map<String, Object> getAdminHistoricalList(int page, int limit) {
         try {
             List<AdminHistoricalModel> adminHistoricalModels = adminHistoricalDao.selectList(null);
+            Collections.reverse(adminHistoricalModels); // 倒序
             int startWith = (page - 1) * limit;
             int endWith = Math.min(startWith + limit, adminHistoricalModels.size());
             List<AdminHistoricalModel> subList = adminHistoricalModels.subList(startWith, endWith);

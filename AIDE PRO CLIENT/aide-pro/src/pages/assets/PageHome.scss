@@ -1,0 +1,67 @@
+
+.application-dialog {
+    max-height: 75%;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 8px;
+
+    div.innerHtml {
+        line-height: 35px;
+
+        h3 {
+            margin: 10px 0;
+            color: #000000;
+        }
+
+        div.el-collapse-item__content {
+            padding-bottom: 15px;
+        }
+    }
+
+    div.special-thanks {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        div.special-thanks-item {
+            width: 100%;
+            height: 45px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+
+            img.user-avatar {
+                width: 45px;
+                height: 45px;
+                margin-right: 10px;
+                border-radius: 3px;
+            }
+
+            div.user-content {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                h3.user-nick {
+                    font-size: 1rem;
+                    color: #000000;
+                }
+
+                p.user-desc {
+                    font-size: 0.95rem;
+                    color: #999999;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+
+    div.contack-us {
+        div.contack-item {
+            cursor: pointer;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

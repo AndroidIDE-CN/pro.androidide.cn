@@ -16,6 +16,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/NotFouLayout.css");
+<style lang="scss">
+    @import url("./assets/NotFouLayout.scss");
 </style>

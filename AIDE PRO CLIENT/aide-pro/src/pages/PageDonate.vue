@@ -113,6 +113,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/PageDonate.css");
+<style lang="scss">
+    @import url("./assets/PageDonate.scss");
 </style>

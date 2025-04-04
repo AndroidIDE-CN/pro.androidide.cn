@@ -11,7 +11,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("admin/friends")
-@CrossOrigin(allowCredentials = "true", origins = "http://11.47.17.166:5173/")
 public class AdminFriendsController {
 
     private final TokenService tokenService;

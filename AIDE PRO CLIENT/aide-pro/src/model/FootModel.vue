@@ -10,7 +10,7 @@
     <div class="footer-container" :class="applicationStore.isDeviceMobile && 'container-mobile'">
         <div class="footer-box">
             <span class="copyrighgt-html">
-                <p>©2024 Aide Pro All Rights Reserved OpenLin</p>
+                <p>AIDE PRO All Rights Reserved OpenLin</p>
             </span>
 
             <div class="right-box">
@@ -25,6 +25,6 @@
     </div>
 </template>
 
-<style>
-    @import url("./assets/FootModel.css");
+<style lang="scss">
+    @import url("./assets/FootModel.scss");
 </style>
