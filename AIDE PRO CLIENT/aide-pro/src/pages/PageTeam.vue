@@ -21,6 +21,7 @@
     });
     
     document.title = "团队成员";
+    document.body.style.background = "#ffffff";
     if (route.query.from !== 'app') location.href = '/';
 </script>
 
